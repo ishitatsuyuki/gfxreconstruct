@@ -28,10 +28,13 @@
 
 #include <atomic>
 #include <mutex>
+#include <shared_mutex>
 
 GFXRECON_BEGIN_NAMESPACE(gfxrecon)
 GFXRECON_BEGIN_NAMESPACE(util)
 
+using SharedMutex = std::shared_mutex;
+#if 0
 // A shared (reader/writer) mutex implementation using std::mutex and std::atomic.
 class SharedMutex
 {
@@ -59,6 +62,7 @@ class SharedMutex
     std::atomic_size_t reader_count_;
     std::atomic_bool   wait_for_writer_;
 };
+#endif
 
 GFXRECON_END_NAMESPACE(util)
 GFXRECON_END_NAMESPACE(gfxrecon)

@@ -26,6 +26,7 @@
 GFXRECON_BEGIN_NAMESPACE(gfxrecon)
 GFXRECON_BEGIN_NAMESPACE(util)
 
+#if 0
 thread_local std::atomic_bool SharedMutex::has_read_lock_{ false };
 
 void SharedMutex::lock()
@@ -70,6 +71,7 @@ void SharedMutex::unlock_shared()
 {
     reader_count_.fetch_sub(1);
 }
+#endif
 
 GFXRECON_END_NAMESPACE(util)
 GFXRECON_END_NAMESPACE(gfxrecon)
